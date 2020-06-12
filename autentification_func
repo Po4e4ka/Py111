@@ -1,0 +1,22 @@
+import base64
+def autentification():
+    """
+    Авторизация в программе
+    """
+    while True:
+        autorization = False
+        login = input('Введите логин: ')
+        password = input('Введите пароль: ')
+        test = base64.b64encode((login + password).encode("UTF-8")).decode("UTF-8")+'\n'
+        with open ('autorization_data.txt', 'r') as f:
+            for item in f:
+
+                if test == item:
+                    autorization = True
+        if autorization:
+            os.system("cls")
+            print(f"Привет, {login}")
+            break
+        else:
+            print('Неверный логин или пароль, повторите попытку')
+            continue
