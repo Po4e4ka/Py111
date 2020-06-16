@@ -29,11 +29,11 @@ def main():
                 elif cursor == 2:
                     sorti = 2
         elif cursor == 2:  # Пункт 2 основного меню
-            data_input()
+            data_input(data)
         elif cursor == 3:  # Пункт 3 основного меню
             cursor = 0
             search = input('Введите часть названия или имени автора для поиска: ')
-            searching_data_ = searching_data(search)
+            searching_data_ = searching_data(data, search)
             if searching_data_ is not None:
                 out_in_console(searching_data_)
                 edit_position = try_input_range(1, len(searching_data_)+1,

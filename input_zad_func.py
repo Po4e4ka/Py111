@@ -30,7 +30,7 @@ def out_in_console(data, sorti=0):
     return len(data)
 
 
-def data_input():
+def data_input(data):
     """
     Добавление новой книги в базу
     """
@@ -48,9 +48,8 @@ def data_input():
         break
 
 
-def searching_data(search):
+def searching_data(data, search):
     while True:
-        global data
         _searching_data = []
         for i in range(len(data)):
             if      re.search(search, data[i]['Автор']) is not None \
